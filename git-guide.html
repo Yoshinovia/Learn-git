@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .note {
+            background-color: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Git Guide: Getting Started with Version Control</h1>
+        
+        <div class="note">
+            <p><strong>Note:</strong> Git might not be installed on your system yet. Follow the installation instructions below to get started.</p>
+        </div>
+
+        <h2>What is Git?</h2>
+        <p>Git is a distributed version control system that helps you track changes in your files and coordinate work among multiple developers. It's essential for modern software development.</p>
+
+        <h2>Installing Git</h2>
+        <h3>Windows</h3>
+        <ol>
+            <li>Download Git from <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
+            <li>Run the installer and follow the setup wizard (default settings are usually fine)</li>
+            <li>After installation, open a new terminal/command prompt and type <code>git --version</code> to verify installation</li>
+        </ol>
+
+        <h3>macOS</h3>
+        <p>If you have Homebrew installed:</p>
+        <pre>brew install git</pre>
+        <p>Otherwise, download from <a href="https://git-scm.com/download/mac">https://git-scm.com/download/mac</a></p>
+
+        <h3>Linux (Ubuntu/Debian)</h3>
+        <pre>sudo apt update
+sudo apt install git</pre>
+
+        <h2>Basic Git Configuration</h2>
+        <p>After installing Git, configure your identity:</p>
+        <pre>git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</pre>
+
+        <h2>Basic Git Workflow</h2>
+        <ol>
+            <li><strong>Initialize</strong> a Git repository in your project folder</li>
+            <li><strong>Add</strong> files to the staging area</li>
+            <li><strong>Commit</strong> changes to the repository</li>
+            <li><strong>Push</strong> changes to a remote repository (like GitHub)</li>
+        </ol>
+
+        <h2>Essential Git Commands</h2>
+        <h3>Getting Started</h3>
+        <pre># Initialize a new Git repository
+git init
+
+# Clone an existing repository
+git clone https://github.com/username/repository.git</pre>
+
+        <h3>Working with Changes</h3>
+        <pre># Check the status of your files
+git status
+
+# Add files to staging area
+git add filename.txt        # Add specific file
+git add .                   # Add all changed files
+
+# Commit changes
+git commit -m "Your commit message"
+
+# View commit history
+git log</pre>
+
+        <h3>Working with Remote Repositories</h3>
+        <pre># Add a remote repository
+git remote add origin https://github.com/username/repository.git
+
+# Push changes to remote repository
+git push origin main
+
+# Pull changes from remote repository
+git pull origin main</pre>
+
+        <h2>Using Git with Your Current Project</h2>
+        <p>Your project currently has <code>index.html</code> and <code>style.css</code>. Here's how to start using Git with it:</p>
+        <pre># 1. Open terminal in your project directory (c:/Users/viand/test)
+# 2. Initialize Git repository
+git init
+
+# 3. Add all files to staging area
+git add .
+
+# 4. Make your first commit
+git commit -m "Initial commit: Add index.html and style.css"
+
+# 5. (Optional) Create a repository on GitHub and connect it
+git remote add origin https://github.com/yourusername/your-repo.git
+git branch -M main
+git push -u origin main</pre>
+
+        <h2>Branching</h2>
+        <p>Branches allow you to work on different features separately:</p>
+        <pre># Create and switch to a new branch
+git checkout -b feature-branch
+
+# Switch between branches
+git checkout main
+git checkout feature-branch
+
+# Merge a branch into current branch
+git merge feature-branch</pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Commit frequently with descriptive messages</li>
+            <li>Push your changes regularly to backup your work</li>
+            <li>Use branches for new features or experiments</li>
+            <li>Pull changes from remote before starting work to stay updated</li>
+        </ul>
+
+        <h2>Learning Resources</h2>
+        <ul>
+            <li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a> (free online)</li>
+            <li><a href="https://try.github.io/">Try Git</a> (interactive tutorial)</li>
+            <li><a href="https://learngitbranching.js.org/">Learn Git Branching</a> (visual tutorial)</li>
+        </ul>
+    </div>
+</body>
+</html>
